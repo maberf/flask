@@ -1,5 +1,6 @@
 from flask import render_template
-from app import app
+from app import app, db
+from app.models.tables import User
 from app.models.forms import LoginForm
 
 
@@ -18,16 +19,11 @@ def login():
     return render_template('login.html', form=form)
 
 
-'''@app.route("/test/<int:id>")  # pelo id
-def test(id):
-    print(type(id))
-    return ""'''
-
-
-'''@app.route("/test", defaults={'name': None})  # sem nome por esta rota
-@app.route("/test/<name>")  # com nome por esta rota
-def test(name):
-    if name:
-        return "Olá, %s!" % name
-    else:
-        return "Olá, desconhecido!"'''
+@app.route("/test/<info>")  # página de teste de inserção no BD
+@app.route("/test/", defaults={'info': None})
+def test(info):
+    i = User("uiliam", "1234", "Uiliam Zeferino", "uiliamzeferino@hotmail.com")
+    db.session.add(i)  # abre sessão no BD para inserção de instância i
+    db.session.commit(i)  # grava (persiste) no BD a inserção da instância i
+    return "OK"
+    
