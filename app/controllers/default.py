@@ -20,9 +20,9 @@ def index():
 def login():
     form = LoginForm()  # instância na página de login
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()  
+        user = User.query.filter_by(username=form.username.data).first()
         if user and user.password == form.password.data:
-        # se usuário existe e a senha digitada confere com o valor no BD
+            # se usuário existe e a senha digitada confere com o valor no BD
             login_user(user)
             flash("Logged in.")
             return redirect(url_for("index"))  # após login vai para index
@@ -36,6 +36,7 @@ def logout():
     logout_user()
     flash("Logged out.")
     return redirect(url_for("index"))  # após logout vai para index
+
 
 """
 @app.route("/test/<info>")  # teste do BD
