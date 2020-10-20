@@ -1,3 +1,12 @@
 {
-    "python.pythonPath": "c:\\Users\\maber\\DevProjects\\flask\\venvw\\Scripts\\python.exe"
+    "python.pythonPath": "c:\\Users\\maber\\DevProjects\\flask\\venvw\\Scripts\\python.exe",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "flaskdb",
+            "database": "${workspaceFolder:flask}/database.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
 }
