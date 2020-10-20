@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="{{ url_for('static',
     filename="css/bootstrap.min.css") }}">
 </head>
-<body>
-    <!--
+<body>  
     <div class="container">
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    {if current_user.is_authenticated %}
+                    {%if current_user.is_authenticated %}
                         <li><a href="{{ url_for('logout') }}">Logout</button></a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Login</button></a></li>
@@ -24,7 +23,6 @@
             </nav>
         </div>
     </div>
--->
 
     <h3 class="text-muted">Toilter</h3>
 

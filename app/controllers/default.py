@@ -24,8 +24,8 @@ def login():
         if user and user.password == form.password.data:
         # se usuário existe e a senha digitada confere com o valor no BD
             login_user(user)
-            return redirect(url_for("index"))  # após login vai para index
             flash("Logged in.")
+            return redirect(url_for("index"))  # após login vai para index
         else:
             flash("Invalid login.")
     return render_template('login.html', form=form)
