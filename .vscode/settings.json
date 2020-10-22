@@ -4,8 +4,8 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "flaskdb",
-            "database": "${workspaceFolder:flask}/database.db"
+            "name": "flask-local",
+            "database": "database.db"
         }
     ],
     "sqltools.useNodeRuntime": true
